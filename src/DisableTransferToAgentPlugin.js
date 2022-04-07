@@ -1,13 +1,6 @@
 import React from 'react';
 import { VERSION } from '@twilio/flex-ui';
 import { FlexPlugin } from '@twilio/flex-plugin';
-import { injectGlobal } from 'react-emotion';
-
-// Increasing the width of the Team View WorkerPanel to show full skill name
-import global from './styles/global.css';
-injectGlobal`
-  ${global}
-`;
 
 const PLUGIN_NAME = 'DisableTransferToAgentPlugin';
 
