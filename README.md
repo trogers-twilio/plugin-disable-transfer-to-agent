@@ -1,6 +1,8 @@
-# Your custom Twilio Flex Plugin
+# Disable Agent Transfer Flex Plugin
 
-Twilio Flex Plugins allow you to customize the appearance and behavior of [Twilio Flex](https://www.twilio.com/flex). If you want to learn more about the capabilities and how to use the API, check out our [Flex documentation](https://www.twilio.com/docs/flex).
+Removes the Agent tab from the transfer directory so agents can only transfer to Queues.
+
+![Screenshot](images/screenshot.png)
 
 ## Setup
 
