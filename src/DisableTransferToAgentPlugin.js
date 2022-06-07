@@ -20,5 +20,23 @@ export default class DisableTransferToAgentPlugin extends FlexPlugin {
     // Removing the Agent tab from the transfer directory to disable
     // transferring directly to an agent instead of a queue
     flex.WorkerDirectoryTabs.Content.remove('workers');
+
+    // Per business request, removing any queues containing "Registration" 
+    // in their name from the transfer directory
+    const queuesToHide = [
+      'GDC GD Registration En',
+      'GDC GD Registration Es',
+      'GDC Walmart Registration En',
+      'GDC Walmart Registration Es',
+      'GDC GD Activation En (Not IVR Xfer)',
+      'GDC GD Activation Es (Not for IVR Xfer)',
+      'GDC Intuit_Turbo Activation En (Not for IVR Xfer)',
+      'GDC Intuit_Turbo Activation Es (Not for IVR Xfer)',
+      'GDC Walmart Activation En (Not for IVR Xfer)',
+      'GDC Walmart Activation Es (Not for IVR Xfer)',
+      'Everyone'
+    ];
+
+    flex.WorkerDirectoryTabs.defaultProps.hiddenQueueFilter = `data.queue_name NOT_IN ${JSON.stringify(queuesToHide)}`;
   }
 }
